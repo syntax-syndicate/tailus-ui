@@ -6,7 +6,7 @@ import { slider, type SliderProps, type SliderTrackProps } from "@tailus/themer"
 const SliderContext = createContext<SliderProps>({})
 
 const SliderRoot = React.forwardRef<
-  React.ElementRef<typeof SliderPrimitive.Root>,
+  React.ComponentRef<typeof SliderPrimitive.Root>,
   React.ComponentProps<typeof SliderPrimitive.Root> & Omit<SliderProps, "variant">
   >(({ intent="primary", size="md", className, ...props }, forwardedRef) => {
     const { root } = slider()
@@ -22,7 +22,7 @@ const SliderRoot = React.forwardRef<
 });
 
 const SliderThumb = React.forwardRef<
-  React.ElementRef<typeof SliderPrimitive.SliderThumb>,
+  React.ComponentRef<typeof SliderPrimitive.SliderThumb>,
   React.ComponentProps<typeof SliderPrimitive.SliderThumb> & Omit<SliderProps, "intent">
   >(({ variant="raised", size="md", className, ...props }, forwardedRef) => {
 
@@ -42,7 +42,7 @@ const SliderThumb = React.forwardRef<
   });
 
 const SliderTrack = React.forwardRef<
-  React.ElementRef<typeof SliderPrimitive.Track>,
+  React.ComponentRef<typeof SliderPrimitive.Track>,
   React.ComponentProps<typeof SliderPrimitive.Track> & SliderTrackProps
   >(({ className, variant="soft", ...props }, forwardedRef) => {
 
@@ -58,7 +58,7 @@ const SliderTrack = React.forwardRef<
 });
 
 const SliderRange = React.forwardRef<
-  React.ElementRef<typeof SliderPrimitive.Range>,
+  React.ComponentRef<typeof SliderPrimitive.Range>,
   React.ComponentProps<typeof SliderPrimitive.Range> & SliderProps 
   >(({ intent, className, ...props }, forwardedRef) => {
 

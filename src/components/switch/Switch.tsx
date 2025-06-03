@@ -9,7 +9,7 @@ const SwitchContext = React.createContext<SwitchVariantsProps>({ intent: "primar
 
 
 const SwitchRoot = React.forwardRef<
-  React.ElementRef<typeof Switch.Root>,
+  React.ComponentRef<typeof Switch.Root>,
   React.ComponentPropsWithoutRef<typeof Switch.Root> & SwitchVariantsProps
   >(({ className, intent="primary", fancy=false, ...props }, forwardedRef) => {
     const { root } = fancy ? fancySwitch({intent}) : switchTheme({intent});
@@ -21,7 +21,7 @@ const SwitchRoot = React.forwardRef<
   });
 
 const SwitchThumb = React.forwardRef<
-  React.ElementRef<typeof Switch.Thumb>,
+  React.ComponentRef<typeof Switch.Thumb>,
   React.ComponentPropsWithoutRef<typeof Switch.Thumb> & SwitchProps
   >(({ className, ...props }, forwardedRef) => {
     const { intent } = useContext(SwitchContext)

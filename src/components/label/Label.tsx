@@ -10,7 +10,7 @@ export interface FormLabelProps extends LabelProps {
 }
 
 const Label = React.forwardRef<
-  React.ElementRef<typeof LabelPrimitive.Root>,
+  React.ComponentRef<typeof LabelPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> & FormLabelProps
   >(({ className,floating, variant, asTextarea, size = "md", ...props }, forwardedRef) => {
   

@@ -5,7 +5,7 @@ import { scrollArea } from "@tailus/themer"
 const {root, bar, thumb} = scrollArea()
 
 const ScrollAreaRoot = React.forwardRef<
-  React.ElementRef<typeof ScrollAreaPrimitive.Root>,
+  React.ComponentRef<typeof ScrollAreaPrimitive.Root>,
   React.ComponentProps<typeof ScrollAreaPrimitive.Root>
 >((props, forwardedRef) => (
   <ScrollAreaPrimitive.Root
@@ -18,7 +18,7 @@ const ScrollAreaRoot = React.forwardRef<
 const ScrollAreaViewport = ScrollAreaPrimitive.Viewport;
 
 const ScrollAreaScrollBar = React.forwardRef<
-  React.ElementRef<typeof ScrollAreaPrimitive.Scrollbar>,
+  React.ComponentRef<typeof ScrollAreaPrimitive.Scrollbar>,
   React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Scrollbar>
 >((
   {
@@ -44,7 +44,7 @@ const ScrollAreaScrollBar = React.forwardRef<
 ScrollAreaScrollBar.displayName = ScrollAreaPrimitive.Scrollbar.displayName;
 
 const ScrollAreaThumb = React.forwardRef<
-  React.ElementRef<typeof ScrollAreaPrimitive.Thumb>,
+  React.ComponentRef<typeof ScrollAreaPrimitive.Thumb>,
   React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Thumb>
 >((props, forwardedRef) => (
   <ScrollAreaPrimitive.Thumb

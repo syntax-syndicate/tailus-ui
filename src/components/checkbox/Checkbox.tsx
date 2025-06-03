@@ -8,7 +8,7 @@ export interface CheckboxProps extends CheckboxVariants {
 }
 
 const CheckboxRoot = forwardRef<
-  React.ElementRef<typeof CheckboxPrimitive.Root>,
+  React.ComponentRef<typeof CheckboxPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root> & CheckboxProps
   >(({ className, intent, fancy, ...props }: CheckboxProps, forwardedRef) => {
     const classes = fancy ? fancyCheckbox({ intent, className }) : checkbox({ intent, className });

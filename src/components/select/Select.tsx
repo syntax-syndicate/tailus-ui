@@ -22,7 +22,7 @@ const SelectContext = React.createContext<SelectProps>({});
 const { button, separator, itemIndicator, label } = select.soft()
 
 const SelectScrollUpButton = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.ScrollUpButton>,
+  React.ComponentRef<typeof SelectPrimitive.ScrollUpButton>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.ScrollUpButton>
 >(({className, children, ...props}, forwardedRef) => (
   <SelectPrimitive.ScrollUpButton
@@ -35,7 +35,7 @@ const SelectScrollUpButton = React.forwardRef<
 ));
 
 const SelectScrollDownButton = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.ScrollDownButton>,
+  React.ComponentRef<typeof SelectPrimitive.ScrollDownButton>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.ScrollDownButton>
 >(({className, children, ...props}, forwardedRef) => (
   <SelectPrimitive.ScrollDownButton
@@ -48,7 +48,7 @@ const SelectScrollDownButton = React.forwardRef<
 ));
 
 const SelectTrigger = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.Trigger>,
+  React.ComponentRef<typeof SelectPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger> & TriggerProps
 >(({size, variant, className, children, ...props}, forwardedRef) => {
   const { parent } = trigger()
@@ -69,7 +69,7 @@ const SelectTriggerIcon = ({ className, size, children }: SelectIconProps) => {
 };
 
 const SelectContent = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.Content>,
+  React.ComponentRef<typeof SelectPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content> & SelectProps
   >(({ className, variant, intent, mixed, fancy, children, ...props }, forwardedRef) => {
 
@@ -103,7 +103,7 @@ const SelectContent = React.forwardRef<
   });
 
 const SelectItemIndicator = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.ItemIndicator>,
+  React.ComponentRef<typeof SelectPrimitive.ItemIndicator>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.ItemIndicator>
 >(({className, ...props}, forwardedRef) => (
   <SelectPrimitive.ItemIndicator
@@ -114,7 +114,7 @@ const SelectItemIndicator = React.forwardRef<
 ));
 
 const SelectItem = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.Item>,
+  React.ComponentRef<typeof SelectPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item> & SelectProps
   >(({ className, variant, children, ...props }, forwardedRef) => {
 
@@ -139,7 +139,7 @@ const SelectItem = React.forwardRef<
   });
 
 const SelectLabel = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.Label>,
+  React.ComponentRef<typeof SelectPrimitive.Label>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Label>
 >(({className, ...props}, forwardedRef) => (
   <SelectPrimitive.Label
@@ -150,7 +150,7 @@ const SelectLabel = React.forwardRef<
 ));
 
 const SelectGroup = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.Group>,
+  React.ComponentRef<typeof SelectPrimitive.Group>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Group>
 >(({children, ...props}, forwardedRef) => (
   <SelectPrimitive.Group
@@ -162,7 +162,7 @@ const SelectGroup = React.forwardRef<
 ));
 
 const SelectSeparator = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.Separator>,
+  React.ComponentRef<typeof SelectPrimitive.Separator>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Separator> & Pick<SeparatorProps, "fancy" | "dashed">
   >(({ className, fancy, dashed, ...props }, forwardedRef) => {
 

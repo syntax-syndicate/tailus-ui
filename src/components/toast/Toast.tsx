@@ -9,7 +9,7 @@ const ToastAction = ToastPrimitive.Action;
 const ToastClose = ToastPrimitive.Close;
 
 const ToastRoot = React.forwardRef<
-  React.ElementRef<typeof ToastPrimitive.Root>,
+  React.ComponentRef<typeof ToastPrimitive.Root>,
   React.ComponentProps<typeof ToastPrimitive.Root> & ToastProps
   >(({fancy=false, mixed=false, withAction=false, className, ...props}, forwardedRef) => {
     
@@ -27,7 +27,7 @@ const ToastRoot = React.forwardRef<
 });
 
 const ToastTitle = React.forwardRef<
-  React.ElementRef<typeof ToastPrimitive.Title>,
+  React.ComponentRef<typeof ToastPrimitive.Title>,
   React.ComponentPropsWithoutRef<typeof ToastPrimitive.Title>
 >((props, forwardedRef) => {
   return (
@@ -40,7 +40,7 @@ const ToastTitle = React.forwardRef<
 });
 
 const ToastDescription = React.forwardRef<
-  React.ElementRef<typeof ToastPrimitive.Description>,
+  React.ComponentRef<typeof ToastPrimitive.Description>,
   React.ComponentPropsWithoutRef<typeof ToastPrimitive.Description>
 >((props, forwardedRef) => {
   return (
@@ -53,7 +53,7 @@ const ToastDescription = React.forwardRef<
 });
 
 const ToastViewport = React.forwardRef<
-  React.ElementRef<typeof ToastPrimitive.Viewport>,
+  React.ComponentRef<typeof ToastPrimitive.Viewport>,
   React.ComponentPropsWithoutRef<typeof ToastPrimitive.Viewport>
 >((props, forwardedRef) => {
   return (

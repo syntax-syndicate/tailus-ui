@@ -5,7 +5,7 @@ import React from "react";
 interface SeparatorVariantProps extends React.ComponentProps<typeof SeparatorPrimitive.Root>, Pick<SeparatorProps, "fancy" | "dashed"> {}
   
 const SeparatorRoot = React.forwardRef<
-  React.ElementRef<typeof SeparatorPrimitive.Root>,
+  React.ComponentRef<typeof SeparatorPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root> & SeparatorVariantProps
   >(({ fancy, dashed, className, ...props }, ref) => {
     

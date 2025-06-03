@@ -12,7 +12,7 @@ const RootContext = createContext<ToggleRootProps>({
 });
 
 const ToggleGroupRoot = React.forwardRef<
-  React.ElementRef<typeof ToggleGroupPrimitive.Root>,
+  React.ComponentRef<typeof ToggleGroupPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Root> & ToggleRootProps
 >((
   {
@@ -33,7 +33,7 @@ const ToggleGroupRoot = React.forwardRef<
 
 // Creating the ToggleGroupItem component with forwardRef to pass the ref
 const ToggleGroupItem = React.forwardRef<
-  React.ElementRef<typeof ToggleGroupPrimitive.Item>,
+  React.ComponentRef<typeof ToggleGroupPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Item> & ToggleRootProps
 >((
   {

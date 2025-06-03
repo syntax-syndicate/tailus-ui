@@ -17,7 +17,7 @@ const TabsContext = React.createContext<Omit<ListProps, "variant">>({
 const TabsRoot = TabsPrimitive.Root;
 
 const TabsList = React.forwardRef<
-  React.ElementRef<typeof TabsPrimitive.List>,
+  React.ComponentRef<typeof TabsPrimitive.List>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.List> & ListProps
   >(({ className, variant="bottomOutlined", triggerVariant="plain", intent="primary", size="md", ...props }, forwardedRef) => {
 
@@ -35,7 +35,7 @@ const TabsList = React.forwardRef<
 });
 
 const TabsTrigger = React.forwardRef<
-  React.ElementRef<typeof TabsPrimitive.Trigger>,
+  React.ComponentRef<typeof TabsPrimitive.Trigger>,
   React.ComponentProps<typeof TabsPrimitive.Trigger>
 >(({className, ...props}, forwardedRef) => {
 
@@ -51,7 +51,7 @@ const TabsTrigger = React.forwardRef<
 });
 
 const TabsIndicator = React.forwardRef<
-  React.ElementRef<"span">,
+  React.ComponentRef<"span">,
   React.ComponentProps<"span"> & Pick<IndicatorProps, "variant">
   >(({ className, variant = "bottom", ...props }, forwardedRef) => {
   

@@ -10,7 +10,7 @@ export interface RadioRootProps extends RadioProps {
 const RadioGroupContext = React.createContext<RadioRootProps>({fancy: false, intent: "primary"});
 
 const RadioGroupRoot = React.forwardRef<
-  React.ElementRef<typeof RadioGroupPrimitive.Root>,
+  React.ComponentRef<typeof RadioGroupPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root> & RadioRootProps
   >(({ className, intent="primary", fancy=false, ...props }, forwardedRef) => {
   
@@ -32,7 +32,7 @@ export interface RadioItemProps {
 }
 
 const RadioGroupItem = React.forwardRef<
-  React.ElementRef<typeof RadioGroupPrimitive.Item>,
+  React.ComponentRef<typeof RadioGroupPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item> & RadioItemProps
   >((props, forwardedRef) => {
     const {intent, fancy} = useContext(RadioGroupContext);
@@ -47,7 +47,7 @@ const RadioGroupItem = React.forwardRef<
 });
 
 const RadioGroupIndicator = React.forwardRef<
-  React.ElementRef<typeof RadioGroupPrimitive.Indicator>,
+  React.ComponentRef<typeof RadioGroupPrimitive.Indicator>,
   React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Indicator> & RadioProps & {
     className?: string;
   }

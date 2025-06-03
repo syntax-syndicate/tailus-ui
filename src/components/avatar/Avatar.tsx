@@ -3,7 +3,7 @@ import React from "react";
 import { avatar, fallback, image, type AvatarRootProps, type AvatarFallbackProps } from "@tailus/themer";
 
 const AvatarRoot = React.forwardRef<
-  React.ElementRef<typeof AvatarPrimitive.Root>,
+  React.ComponentRef<typeof AvatarPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> & AvatarRootProps
   >(({ className, size = "md", status = "online", bottomStatus = false, topStatus = false, ...props }, ref) => {
 
@@ -19,7 +19,7 @@ const AvatarRoot = React.forwardRef<
 });
 
 const AvatarFallback = React.forwardRef<
-  React.ElementRef<typeof AvatarPrimitive.Fallback>,
+  React.ComponentRef<typeof AvatarPrimitive.Fallback>,
   React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback> & AvatarFallbackProps
 >(({className, variant = "solid", intent="primary", ...props}, ref) => {
   return (
@@ -32,7 +32,7 @@ const AvatarFallback = React.forwardRef<
 });
 
 const AvatarImage = React.forwardRef<
-  React.ElementRef<typeof AvatarPrimitive.Image>,
+  React.ComponentRef<typeof AvatarPrimitive.Image>,
   React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>
 >(({className, ...props}, ref) => {
   return (

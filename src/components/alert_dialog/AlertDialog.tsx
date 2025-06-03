@@ -23,7 +23,7 @@ const AlertDialogTrigger = AlertDialogPrimitive.Trigger;
 const AlertDialogPortal = AlertDialogPrimitive.Portal;
 
 const AlertDialogOverlay = React.forwardRef<
-  React.ElementRef<typeof AlertDialogPrimitive.Overlay>,
+  React.ComponentRef<typeof AlertDialogPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Overlay>
   >(({ className, ...props }, forwardedRef) => {
     const { overlay } = dialog()
@@ -38,7 +38,7 @@ const AlertDialogOverlay = React.forwardRef<
 })
 
 const AlertDialogContent = React.forwardRef<
-  React.ElementRef<typeof AlertDialogPrimitive.Content>,
+  React.ComponentRef<typeof AlertDialogPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Content> & DialogProps
   >(({ className, mixed, fancy, ...props }, forwardedRef) => {
   
@@ -58,7 +58,7 @@ const AlertDialogContent = React.forwardRef<
 });
 
 const AlertDialogTitle = React.forwardRef<
-  React.ElementRef<typeof AlertDialogPrimitive.Title>,
+  React.ComponentRef<typeof AlertDialogPrimitive.Title>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Title> & {
     size?: TitleSizeProp,
     align?: TextAlignProp,
@@ -82,7 +82,7 @@ const AlertDialogTitle = React.forwardRef<
 });
 
 const AlertDialogDescription = React.forwardRef<
-  React.ElementRef<typeof AlertDialogPrimitive.Description>,
+  React.ComponentRef<typeof AlertDialogPrimitive.Description>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Description> & TextProps & {
     size?: TextSizeProp,
     align?: TextAlignProp,
@@ -109,7 +109,7 @@ const AlertDialogCancel = AlertDialogPrimitive.Cancel;
 const AlertDialogAction = AlertDialogPrimitive.Action;
 
 const AlertDialogActions = React.forwardRef<
-  React.ElementRef<"div">,
+  React.ComponentRef<"div">,
   React.ComponentPropsWithoutRef<"div">
   >(({ className, ...props }, forwardedRef) => {
   const { actions } = dialog()

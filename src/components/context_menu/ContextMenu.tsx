@@ -23,7 +23,7 @@ const ContextMenuSub = ContextMenuPrimitive.Sub;
 export interface ContextMenuContentProps extends MenuProps { }
 
 const ContextMenuTrigger = React.forwardRef<
-  React.ElementRef<typeof ContextMenuPrimitive.Trigger>,
+  React.ComponentRef<typeof ContextMenuPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Trigger>
   >((props, forwardedRef) => {
     const {trigger} = menu.solid({intent:"primary"});
@@ -37,7 +37,7 @@ const ContextMenuTrigger = React.forwardRef<
 });
 
 const ContextMenuContent = React.forwardRef<
-  React.ElementRef<typeof ContextMenuPrimitive.Content>,
+  React.ComponentRef<typeof ContextMenuPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Content> & ContextMenuContentProps
   >(({ className, variant, intent, mixed, fancy, ...props }, forwardedRef) => {
     
@@ -70,7 +70,7 @@ const ContextMenuContent = React.forwardRef<
 });
 
 const ContextMenuItem = React.forwardRef<
-  React.ElementRef<typeof ContextMenuPrimitive.Item>,
+  React.ComponentRef<typeof ContextMenuPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Item> & MenuProps
 >((
   {
@@ -103,7 +103,7 @@ interface ContextMenuSubTriggerProps extends MenuProps {
 }
 
 const ContextMenuSubTrigger = React.forwardRef<
-  React.ElementRef<typeof ContextMenuPrimitive.SubTrigger>,
+  React.ComponentRef<typeof ContextMenuPrimitive.SubTrigger>,
   React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.SubTrigger> & ContextMenuSubTriggerProps
 >((
   {
@@ -135,7 +135,7 @@ interface ContextMenuSubContentProps extends ContextMenuContentProps {
 }
 
 const ContextMenuSubContent = React.forwardRef<
-  React.ElementRef<typeof ContextMenuPrimitive.SubContent>,
+  React.ComponentRef<typeof ContextMenuPrimitive.SubContent>,
   React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.SubContent> & ContextMenuSubContentProps
 >((
   {
@@ -168,7 +168,7 @@ const ContextMenuSubContent = React.forwardRef<
 interface ContextMenuSeparatorProps extends SeparatorProps {}
 
 const ContextMenuSeparator = React.forwardRef<
-  React.ElementRef<typeof ContextMenuPrimitive.Separator>,
+  React.ComponentRef<typeof ContextMenuPrimitive.Separator>,
   React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Separator> & ContextMenuSeparatorProps
 >(({className, fancy, dashed, ...props}, forwardedRef) => {
   const {fancy: contextVariant} = React.useContext(MenuContext);
@@ -186,7 +186,7 @@ const ContextMenuSeparator = React.forwardRef<
 });
 
 const ContextMenuCommand = React.forwardRef<
-  React.ElementRef<"div">,
+  React.ComponentRef<"div">,
   React.ComponentPropsWithoutRef<"div"> & ContextMenuContentProps
 >(({className, ...props}, forwardedRef) => {
   const { command } = menu.solid({});
@@ -200,7 +200,7 @@ const ContextMenuCommand = React.forwardRef<
 });
 
 const ContextMenuIcon = React.forwardRef<
-  React.ElementRef<"div">,
+  React.ComponentRef<"div">,
   React.ComponentPropsWithoutRef<"div"> & ContextMenuContentProps
 >(({className, ...props}, forwardedRef) => {
   const { icon } = menu.solid({});
