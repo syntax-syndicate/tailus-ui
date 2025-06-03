@@ -21,7 +21,7 @@ const NestedRoot = Primitive.NestedRoot;
 const DirectionContext = React.createContext<Omit<DrawerProps, "fancy" | "mixed">>({ direction: "bottom", withControler:true });
 
 type RootProps = React.ComponentProps<typeof Primitive.Root> & DrawerProps & {
-    ref?: React.Ref<React.ElementRef<typeof Primitive.Root>>;
+    ref?: React.Ref<React.ComponentRef<typeof Primitive.Root>>;
 };
 
 const Root: React.FC<RootProps> = ({ direction, withControler, ...props }, forwardedRef) => {
@@ -33,7 +33,7 @@ const Root: React.FC<RootProps> = ({ direction, withControler, ...props }, forwa
 };
 
 const Content = React.forwardRef <
-    React.ElementRef < typeof Primitive.Content > ,
+    React.ComponentRef < typeof Primitive.Content > ,
     React.ComponentProps < typeof Primitive.Content > & Omit<DrawerProps, "direction"> 
     >(({
         className,
@@ -58,7 +58,7 @@ const Content = React.forwardRef <
 );
 
 const Overlay = React.forwardRef<
-  React.ElementRef<typeof Primitive.Overlay>,
+  React.ComponentRef<typeof Primitive.Overlay>,
   React.ComponentProps<typeof Primitive.Overlay>
   >(({ className, ...props }, forwardedRef) => {
     
@@ -74,7 +74,7 @@ const Overlay = React.forwardRef<
   });
 
 const Title = React.forwardRef<
-  React.ElementRef<typeof Primitive.Title>,
+  React.ComponentRef<typeof Primitive.Title>,
   React.ComponentProps<typeof Primitive.Title> & {
     size?: TitleSizeProp,
     align?: TextAlignProp,
@@ -89,7 +89,7 @@ const Title = React.forwardRef<
 ));
 
 const Description = React.forwardRef<
-  React.ElementRef<typeof Primitive.Description>,
+  React.ComponentRef<typeof Primitive.Description>,
   React.ComponentProps<typeof Primitive.Description> & TextProps & {
     size?: TextSizeProp,
     align?: TextAlignProp,

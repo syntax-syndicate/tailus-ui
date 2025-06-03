@@ -5,7 +5,7 @@ import { progress, type RootProps, type IndicatorProps as IndicatorVariants } fr
 const { root, indicator } = progress();
 
 const ProgressRoot = React.forwardRef<
-  React.ElementRef<typeof ProgressPrimitive.Root>,
+  React.ComponentRef<typeof ProgressPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root> & RootProps
   >(({ className, size="md", variant="soft", ...props}, forwardedRef) => {
 
@@ -27,7 +27,7 @@ const ProgressRoot = React.forwardRef<
 interface IndicatorProps extends React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Indicator>, IndicatorVariants {}
 
 const ProgressIndicator = React.forwardRef<
-  React.ElementRef<typeof ProgressPrimitive.Indicator>,
+  React.ComponentRef<typeof ProgressPrimitive.Indicator>,
   IndicatorProps
   >(({
     className,

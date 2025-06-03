@@ -13,7 +13,7 @@ export interface FormFieldProps extends LabelProps {
 export const FormContext = createContext<LabelProps>({});
 
 const FormField = React.forwardRef<
-    React.ElementRef<typeof Field>,
+    React.ComponentRef<typeof Field>,
     React.ComponentPropsWithoutRef<typeof Field> & FormFieldProps
   >(({ className, size="md", floating, asTextarea, name, variant="mixed", ...props }, forwardedRef) => {
 

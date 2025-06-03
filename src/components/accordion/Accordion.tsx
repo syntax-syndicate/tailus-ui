@@ -7,7 +7,7 @@ const defaultContextValue:AccordionProps  = {variant : "default", fancy : true};
 const Context = React.createContext<AccordionProps>(defaultContextValue);
 
 const AccordionRoot = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Root>,
+  React.ComponentRef<typeof AccordionPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Root> & AccordionProps
   >(({ className, variant, fancy, ...props }, forwardedRef) => {
   const { root } = accordion({variant});
@@ -23,7 +23,7 @@ const AccordionRoot = React.forwardRef<
 });
 
 const AccordionItem = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Item>,
+  React.ComponentRef<typeof AccordionPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item> & AccordionProps
   >(({ className, fancy, ...props }, forwardedRef) => {
   
@@ -46,7 +46,7 @@ const AccordionItem = React.forwardRef<
 });
 
 const AccordionTrigger = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Trigger>,
+  React.ComponentRef<typeof AccordionPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
 >(({className, children, ...props}, forwardedRef) => {
   const {variant} = React.useContext(Context);
@@ -69,7 +69,7 @@ const AccordionTrigger = React.forwardRef<
 });
 
 const AccordionContent = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Content>,
+  React.ComponentRef<typeof AccordionPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
 >(({className, children, ...props}, forwardedRef) => {
   const {variant} = React.useContext(Context);

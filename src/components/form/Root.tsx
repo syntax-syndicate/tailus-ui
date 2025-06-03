@@ -2,7 +2,7 @@ import {Root} from "@radix-ui/react-form";
 import React from "react";
 
 const FormRoot = React.forwardRef<
-React.ElementRef<typeof Root>,
+React.ComponentRef<typeof Root>,
 React.ComponentPropsWithoutRef<typeof Root>
 >(({className, ...props}, forwardedRef) => (
     <Root

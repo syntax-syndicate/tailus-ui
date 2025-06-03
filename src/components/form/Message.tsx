@@ -10,7 +10,7 @@ export interface FormMessageProps extends MessageProps{
 }
 
 const FormMessage = React.forwardRef<
-  React.ElementRef<typeof Message>,
+  React.ComponentRef<typeof Message>,
   React.ComponentPropsWithoutRef<typeof Message> & FormMessageProps
   >(({ className, size = "sm", ...props }, forwardedRef) => {
     const { message } = form()

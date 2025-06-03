@@ -6,7 +6,7 @@ import { toggle, type ToggleRootProps, type ToggleIconProps as ToggleIconVariant
 const {root, icon} = toggle();
 
 const ToggleRoot = React.forwardRef<
-  React.ElementRef<typeof Root>,
+  React.ComponentRef<typeof Root>,
   React.ComponentPropsWithoutRef<typeof Root> & ToggleRootProps
 >(({
      className,

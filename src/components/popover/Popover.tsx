@@ -8,7 +8,7 @@ const PopoverAnchor = Popover.Anchor;
 const PopoverPortal = Popover.Portal;
 
 const PopoverContent = React.forwardRef<
-  React.ElementRef<typeof Popover.Content>,
+  React.ComponentRef<typeof Popover.Content>,
   React.ComponentPropsWithoutRef<typeof Popover.Content> & PopoverProps
   >(({ className, fancy, mixed, ...props }, forwardedRef) => {
 
@@ -28,7 +28,7 @@ const PopoverContent = React.forwardRef<
 });
 
 const PopoverClose = React.forwardRef<
-  React.ElementRef<typeof Popover.Close>,
+  React.ComponentRef<typeof Popover.Close>,
   React.ComponentPropsWithoutRef<typeof Popover.Close>
   >(({ className, ...props }, forwardedRef) => {
 
@@ -44,7 +44,7 @@ const PopoverClose = React.forwardRef<
   });
 
 const PopoverArrow = React.forwardRef<
-  React.ElementRef<typeof Popover.Arrow>,
+  React.ComponentRef<typeof Popover.Arrow>,
   React.ComponentPropsWithoutRef<typeof Popover.Arrow>
   >(({ className, ...props }, forwardedRef) => {
     const { arrow } = popover()
